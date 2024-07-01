@@ -1,6 +1,7 @@
 // initiate express app and set up the server
 const express = require("express");
 const cors = require("cors");
+const morgan = require("morgan");
 const app = express();
 const port = 8080;
 
@@ -14,10 +15,7 @@ app.use(express.json());
 app.use(cors());
 
 // set up the middleware to log the request
-app.use((req, res, next) => {
-  console.log(`${req.method} ${req.path} - ${req.ip}`);
-  next();
-});
+app.use(morgan("dev"));
 
 app.get("/", (req, res) => {
   // send index.html file as response to the client
@@ -30,5 +28,5 @@ app.get("/staking", (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`);
+  console.log(`app listening at http://localhost:${port}`);
 });
