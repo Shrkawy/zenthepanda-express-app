@@ -27,6 +27,27 @@ app.get("/staking", (req, res) => {
   res.sendFile(__dirname + "/views/staking.html");
 });
 
+app.get("/privacy-policy", (req, res) => {
+  // send privacy-policy.html file as response to the client
+  res.sendFile(__dirname + "/views/privacy-policy.pdf");
+});
+
+app.get("/cookie-policy", (req, res) => {
+  // send cookie-policy.html file as response to the client
+  res.sendFile(__dirname + "/views/cookie-policy.pdf");
+});
+
+app.get("/terms-of-services", (req, res) => {
+  // send terms-of-services.html file as response to the client
+  res.sendFile(__dirname + "/views/terms-of-services.pdf");
+});
+
+// not found error handler
+app.use((req, res, next) => {
+  // redirect to the home page
+  res.redirect("/");
+});
+
 app.listen(port, () => {
   console.log(`app listening at http://localhost:${port}`);
 });
