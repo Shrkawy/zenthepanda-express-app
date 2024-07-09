@@ -1451,7 +1451,7 @@ footer{
 }
 
 .contract-item span:first-child {
-    font-size: 20px;
+    font-size: 25px;
     font-weight: 700;
 
 }
@@ -1539,7 +1539,7 @@ footer{
     background-color: hsl(215 28% 17% / 0.5);
     border-radius: 20px;
     border: 1px solid #ffffff22;
-    /* backdrop-filter: blur(16px); */
+    backdrop-filter: blur(10px);
 }
 
 .graph-img img {
