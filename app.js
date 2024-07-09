@@ -42,12 +42,6 @@ app.get("/terms-of-services", (req, res) => {
   res.sendFile(__dirname + "/views/terms-of-services.pdf");
 });
 
-// not found error handler
-app.use((req, res, next) => {
-  // redirect to the home page
-  res.redirect("/");
-});
-
 app.listen(port, () => {
   console.log(`app listening at http://localhost:${port}`);
 });
